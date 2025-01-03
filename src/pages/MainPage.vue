@@ -69,32 +69,62 @@ const handleWordSuccess = () => {
 </script>
 
 <template>
-  <main class="main">
-    <h1 class="">Alias</h1>
-    <div class="container" v-if="gameStatus === 'notStarted'">
-      <button type="button" class="btn" @click="startGame">Start Game</button>
-    </div>
-    <div class="game" v-if="gameStatus === 'inProgress'">
-      <div class="timer text">{{ timer }}</div>
-      <div class="word text">{{ currentWord }}</div>
-      <div class="controls">
-        <button class="btn" @click="skipCurrentWord">Skip</button>
-        <button class="btn" @click="handleWordSuccess">Success!</button>
+  <div class="flex flex-col min-h-screen">
+    <header class="bg-black">
+      <div class="container mx-auto py-5">
+        <h1 class="text-violet-400 text-3xl">Alias</h1>
       </div>
-    </div>
-    <div class="results" v-if="gameStatus === 'finished'">
-      <div class="total-score text">Total Score: {{ scoreStore.totalScore }}</div>
-      <button type="button" class="btn" @click="startGame">Play Again</button>
-    </div>
-  </main>
+    </header>
+    <main class="flex-grow flex flex-col">
+      <!-- Start Game -->
+      <div
+        class="flex-grow flex items-center justify-center h-full"
+        v-if="gameStatus === 'notStarted'"
+      >
+        <button
+          type="button"
+          class="text-white bg-blue-500 hover:bg-blue-400 py-4 px-6 text-2xl rounded-lg"
+          @click="startGame"
+        >
+          Start Game
+        </button>
+      </div>
+      <!-- Game -->
+      <div
+        class="flex-grow flex flex-col items-center justify-center h-full"
+        v-if="gameStatus === 'inProgress'"
+      >
+        <div class="text-white text-3xl mb-12">{{ timer }}</div>
+        <div class="text-white text-4xl mb-12 font-bold">{{ currentWord }}</div>
+        <div class="flex gap-4">
+          <button
+            class="text-white bg-red-500 hover:bg-red-400 py-4 px-6 text-2xl rounded-lg"
+            @click="skipCurrentWord"
+          >
+            Skip
+          </button>
+          <button
+            class="text-white bg-green-500 hover:bg-green-400 py-4 px-6 text-2xl rounded-lg"
+            @click="handleWordSuccess"
+          >
+            Success!
+          </button>
+        </div>
+      </div>
+      <!-- Results -->
+      <div
+        class="flex-grow flex flex-col items-center justify-center h-full"
+        v-if="gameStatus === 'finished'"
+      >
+        <div class="text-white text-3xl mb-12">Total Score: {{ scoreStore.totalScore }}</div>
+        <button
+          type="button"
+          class="text-white bg-violet-500 hover:bg-violet-400 py-4 px-6 text-2xl rounded-lg"
+          @click="startGame"
+        >
+          Play Again
+        </button>
+      </div>
+    </main>
+  </div>
 </template>
-
-<style lang="scss" scoped>
-.btn {
-  padding: 10px;
-}
-
-.text {
-  font-size: 24px;
-}
-</style>

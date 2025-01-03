@@ -5,5 +5,3 @@ import MainPage from '@/pages/MainPage.vue'
 <template>
   <MainPage />
 </template>
-
-<style lang="scss" scoped></style>
