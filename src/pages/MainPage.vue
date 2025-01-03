@@ -70,7 +70,7 @@ const handleWordSuccess = () => {
 
 <template>
   <main class="main">
-    <h1 class="bg">Alias</h1>
+    <h1 class="text-red-300">Alias</h1>
     <div class="container" v-if="gameStatus === 'notStarted'">
       <button type="button" class="btn" @click="startGame">Start Game</button>
     </div>
