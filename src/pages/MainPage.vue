@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 
 import type { GameStatus } from '@/models'
 import wordsData from '@/assets/json/top1000.json'
@@ -16,6 +16,14 @@ const words = ref<string[]>([])
 const playedWords = ref<string[]>([])
 
 const currentWord = ref<string | null>(null)
+const capitalizedWord = computed<string | null>(() => {
+  if (!currentWord.value) {
+    return ''
+  }
+
+  return currentWord.value.charAt(0).toUpperCase() + currentWord.value.slice(1)
+})
+
 const scoreStore = useScoreStore()
 
 /**
@@ -181,7 +189,7 @@ const restartGame = (): void => {
       >
         <button
           type="button"
-          class="text-white bg-blue-500 hover:bg-blue-400 py-4 px-6 text-2xl rounded-lg"
+          class="text-white bg-blue-500 hover:bg-blue-400 py-4 px-6 text-2xl rounded-lg border-4 border-blue-900"
           @click="startGame"
         >
           Start Game
@@ -193,16 +201,16 @@ const restartGame = (): void => {
         v-if="gameStatus === 'inProgress'"
       >
         <div class="text-white text-3xl mb-12">{{ timer }}</div>
-        <div class="text-white text-4xl mb-12 font-bold">{{ currentWord }}</div>
+        <div class="text-white text-4xl mb-12 font-bold">{{ capitalizedWord }}</div>
         <div class="flex gap-4">
           <button
-            class="text-white bg-red-500 hover:bg-red-400 py-4 px-6 text-2xl rounded-lg"
+            class="text-white bg-red-500 hover:bg-red-400 py-4 px-6 text-2xl rounded-lg border-4 border-red-900"
             @click="skipCurrentWord"
           >
             Skip
           </button>
           <button
-            class="text-white bg-green-500 hover:bg-green-400 py-4 px-6 text-2xl rounded-lg"
+            class="text-white bg-green-500 hover:bg-green-400 py-4 px-6 text-2xl rounded-lg border-4 border-green-900"
             @click="handleWordSuccess"
           >
             Success!
@@ -217,7 +225,7 @@ const restartGame = (): void => {
         <div class="text-white text-3xl mb-12">Total Score: {{ scoreStore.totalScore }}</div>
         <button
           type="button"
-          class="text-white bg-violet-500 hover:bg-violet-400 py-4 px-6 text-2xl rounded-lg"
+          class="text-white bg-violet-500 hover:bg-violet-400 py-4 px-6 text-2xl rounded-lg border-4 border-violet-900"
           @click="restartGame"
         >
           Play Again
