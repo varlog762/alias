@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 
-import type { GameStatus } from '@/models'
+import type { GameStatusType } from '@/models'
 import wordsData from '@/assets/json/top1000.json'
 import { useScoreStore } from '@/stores/score'
 import {
@@ -11,7 +11,7 @@ import {
 } from '@/utils/localStorageManager'
 import ButtonComponent from '@/components/ui/ButtonComponent.vue'
 
-const gameStatus = ref<GameStatus>('notStarted')
+const gameStatus = ref<GameStatusType>('notStarted')
 const timer = ref<number>(0)
 const words = ref<string[]>([])
 const playedWords = ref<string[]>([])
