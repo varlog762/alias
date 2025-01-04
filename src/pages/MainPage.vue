@@ -24,6 +24,7 @@ const scoreStore = useScoreStore()
  */
 const initializeWords = (): void => {
   const storedWords = getWordsFromLocalStorage()
+  console.log(storedWords.length)
 
   if (!storedWords.length) {
     words.value = wordsData.words.map(({ english }) => english)
@@ -36,9 +37,14 @@ const initializeWords = (): void => {
 }
 
 /**
- * Selects a random word from the words array and sets it as the current word.
+ * Shows a new random word from the words array. If the words array is empty, it
+ * calls checkIsGameOver to finish the game.
  */
 const showRandomWord = (): void => {
+  if (!words.value.length) {
+    checkIsGameOver()
+    return
+  }
   const randomIndex = Math.floor(Math.random() * words.value.length)
   currentWord.value = words.value[randomIndex]
 }
