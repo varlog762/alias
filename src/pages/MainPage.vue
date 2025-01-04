@@ -8,8 +8,9 @@ import { useScoreStore } from '@/stores/score'
 const gameStatus = ref<GameStatus>('notStarted')
 const timer = ref<number>(0)
 const words = ref<string[]>([])
+const playedWords = ref<string[]>([])
 
-const currentWord = ref<string>('')
+const currentWord = ref<string | null>(null)
 const scoreStore = useScoreStore()
 
 const showRandomWord = () => {
@@ -51,9 +52,18 @@ const processWord = (isSuccess: boolean) => {
     scoreStore.incrementSkippedWords()
   }
 
+  updatePlayedWords()
   checkIsGameOver()
   showRandomWord()
 }
+
+const updatePlayedWords = () => {
+  if (currentWord.value) {
+    playedWords.value.push(currentWord.value)
+    currentWord.value = null
+  }
+}
+
 const checkIsGameOver = () => {
   if (timer.value === 0 || words.value.length === 0) {
     gameStatus.value = 'finished'
