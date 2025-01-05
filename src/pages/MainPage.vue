@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 
-import type { GameStatusType } from '@/models'
+import type { GameStatusType, WordLanguagesType } from '@/models'
 import wordsData from '@/assets/json/top1000.json'
 import { useScoreStore } from '@/stores/score'
 import {
@@ -25,6 +25,11 @@ const capitalizedWord = computed<string | null>(() => {
   return currentWord.value.charAt(0).toUpperCase() + currentWord.value.slice(1)
 })
 
+const wordsLanguage = ref<WordLanguagesType>('russian')
+console.log(wordsLanguage.value)
+
+const roundCount = ref<number>(0)
+
 const scoreStore = useScoreStore()
 
 /**
@@ -36,7 +41,7 @@ const initializeWords = (): void => {
   console.log(storedWords.length)
 
   if (!storedWords.length) {
-    words.value = wordsData.words.map(({ english }) => english)
+    words.value = wordsData.words.map(({ russian }) => russian)
     saveWordsToLocalStorage(words.value)
 
     return
@@ -46,12 +51,14 @@ const initializeWords = (): void => {
 }
 
 /**
- * Shows a new random word from the words array. If the words array is empty, it
- * calls checkIsGameOver to finish the game.
+ * Selects a random word from the words array and assigns it to the currentWord
+ * reactive reference.
+ *
+ * If the words array is empty, an error is logged to the console.
  */
 const showRandomWord = (): void => {
   if (!words.value.length) {
-    checkIsGameOver()
+    console.error('Error: no words available!')
     return
   }
   const randomIndex = Math.floor(Math.random() * words.value.length)
@@ -68,10 +75,12 @@ const showRandomWord = (): void => {
  * the current word.
  */
 const startGame = (): void => {
+  roundCount.value++
+
   initializeWords()
   scoreStore.reset()
   gameStatus.value = 'inProgress'
-  timer.value = 10
+  timer.value = 60
 
   const timerInterval = setInterval(() => {
     timer.value--
@@ -113,15 +122,20 @@ const processWord = (isSuccess: boolean): void => {
   }
 
   updatePlayedWords()
-  checkIsGameOver()
+
+  if (isGameOver()) {
+    finishRound()
+    return
+  }
   showRandomWord()
 }
 
 /**
- * Updates the playedWords array by adding the current word to it.
+ * Updates the playedWords array by adding the current word.
  *
- * If there is a current word, it is pushed to the playedWords array
- * and then the currentWord is set to null.
+ * If there is a current word set, this function pushes it onto the
+ * playedWords array and then clears the current word. This helps
+ * track all words that have been played during the game.
  */
 
 const updatePlayedWords = (): void => {
@@ -132,16 +146,16 @@ const updatePlayedWords = (): void => {
 }
 
 /**
- * Checks if the game is over based on the timer value and the length of the
- * words array.
+ * Determines if the game is over.
  *
- * If the timer has reached 0 or if the words array is empty, the gameStatus
- * is set to 'finished'.
+ * The game is considered over if the timer has reached 0 or if there
+ * are no more words left in the words array.
+ *
+ * @returns {boolean} True if the game is over, false otherwise.
  */
-const checkIsGameOver = (): void => {
-  if (timer.value === 0 || words.value.length === 0) {
-    gameStatus.value = 'finished'
-  }
+
+const isGameOver = (): boolean => {
+  return timer.value === 0 || words.value.length === 0
 }
 
 /**
@@ -168,26 +182,64 @@ const handleWordSuccess = (): void => {
   processWord(true)
 }
 
-const restartGame = (): void => {
+/**
+ * Finishes the game by updating the localStorage words and resetting
+ * the playedWords array and game status.
+ *
+ * This function is called when the game is over. It removes the playedWords
+ * from the localStorage words and resets the playedWords array and game
+ * status to their initial values.
+ */
+const finishRound = (): void => {
   updateWordsInLocalStorage(playedWords.value)
   playedWords.value = []
-  startGame()
+  gameStatus.value = 'finished'
+}
+
+const exitGame = (): void => {
+  roundCount.value = 0
+  gameStatus.value = 'notStarted'
 }
 </script>
 
 <template>
   <div class="flex flex-col min-h-screen bg-black">
     <header>
-      <div class="container mx-auto py-5">
+      <div class="container mx-auto py-5 flex items-center justify-between">
         <h1 class="text-violet-400 text-3xl">Alias</h1>
+        <div v-if="roundCount" class="text-white text-2xl font-bold">Round: {{ roundCount }}</div>
       </div>
     </header>
     <main class="flex-grow flex flex-col">
       <!-- Start Game -->
       <div
-        class="flex-grow flex items-center justify-center h-full"
+        class="flex-grow flex flex-col items-center justify-center h-full"
         v-if="gameStatus === 'notStarted'"
       >
+        <div class="flex gap-4 mb-5">
+          <div>
+            <input
+              v-model="wordsLanguage"
+              class="mr-1"
+              type="radio"
+              id="russian-words"
+              name="words-language"
+              value="russian"
+            />
+            <label for="russian-words" class="text-white text-xl">Russian</label>
+          </div>
+          <div>
+            <input
+              v-model="wordsLanguage"
+              class="mr-1"
+              type="radio"
+              id="english-words"
+              name="words-language"
+              value="english"
+            />
+            <label for="english-words" class="text-white text-xl">English</label>
+          </div>
+        </div>
         <ButtonComponent color="blue" :cb="startGame">Start Game</ButtonComponent>
       </div>
       <!-- Game -->
@@ -208,7 +260,10 @@ const restartGame = (): void => {
         v-if="gameStatus === 'finished'"
       >
         <div class="text-white text-3xl mb-12">Total Score: {{ scoreStore.totalScore }}</div>
-        <ButtonComponent color="violet" :cb="restartGame">Play Again</ButtonComponent>
+        <div class="flex gap-4">
+          <ButtonComponent color="violet" :cb="startGame">Play Again</ButtonComponent>
+          <ButtonComponent color="violet" :cb="exitGame">Exit</ButtonComponent>
+        </div>
       </div>
     </main>
   </div>
