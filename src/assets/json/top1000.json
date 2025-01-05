@@ -1,10 +1,6 @@
 {
 	"words": [
 		{
-			"english": "yet",
-			"russian": "ещё, всё ещё"
-		},
-		{
 			"english": "yesterday",
 			"russian": "вчера"
 		},
@@ -18,7 +14,7 @@
 		},
 		{
 			"english": "wrong",
-			"russian": "неправильный, неверный"
+			"russian": "неправильный"
 		},
 		{
 			"english": "write",
@@ -58,19 +54,15 @@
 		},
 		{
 			"english": "without",
-			"russian": "без, в отсутствие"
+			"russian": "отсутствие"
 		},
 		{
 			"english": "within",
-			"russian": "в, внутри"
-		},
-		{
-			"english": "with",
-			"russian": "с, вместе с"
+			"russian": "внутри"
 		},
 		{
 			"english": "wish",
-			"russian": "желать, хотеть"
+			"russian": "хотеть"
 		},
 		{
 			"english": "wing",
@@ -86,7 +78,7 @@
 		},
 		{
 			"english": "win",
-			"russian": "победить, выиграть"
+			"russian": "победить"
 		},
 		{
 			"english": "wild",
@@ -106,27 +98,19 @@
 		},
 		{
 			"english": "whole",
-			"russian": "весь, целый"
+			"russian": "целый"
 		},
 		{
 			"english": "whisper",
-			"russian": "говорить шёпотом"
+			"russian": "шёпот"
 		},
 		{
 			"english": "whether",
 			"russian": "ли"
 		},
 		{
-			"english": "whatever",
-			"russian": "какой бы ни"
-		},
-		{
 			"english": "west",
 			"russian": "запад"
-		},
-		{
-			"english": "welcome",
-			"russian": "добро пожаловать!"
 		},
 		{
 			"english": "weight",
@@ -158,7 +142,7 @@
 		},
 		{
 			"english": "way",
-			"russian": "дорога, направление"
+			"russian": "дорога"
 		},
 		{
 			"english": "wave",
@@ -171,10 +155,6 @@
 		{
 			"english": "watch",
 			"russian": "смотреть"
-		},
-		{
-			"english": "waste",
-			"russian": "терять даром"
 		},
 		{
 			"english": "wash",
@@ -190,7 +170,7 @@
 		},
 		{
 			"english": "want",
-			"russian": "желать, хотеть"
+			"russian": "хотеть"
 		},
 		{
 			"english": "wall",
@@ -198,7 +178,7 @@
 		},
 		{
 			"english": "walk",
-			"russian": "идти, гулять"
+			"russian": "гулять"
 		},
 		{
 			"english": "wake",
@@ -218,7 +198,7 @@
 		},
 		{
 			"english": "view",
-			"russian": "вид, пейзаж"
+			"russian": "пейзаж"
 		},
 		{
 			"english": "verse",
@@ -235,14 +215,6 @@
 		{
 			"english": "use",
 			"russian": "использовать"
-		},
-		{
-			"english": "upon",
-			"russian": "на"
-		},
-		{
-			"english": "unless",
-			"russian": "если не"
 		},
 		{
 			"english": "unite",
@@ -334,11 +306,7 @@
 		},
 		{
 			"english": "touch",
-			"russian": "прикасаться, трогать"
-		},
-		{
-			"english": "top",
-			"russian": "первое место"
+			"russian": "трогать"
 		},
 		{
 			"english": "tooth",
@@ -350,7 +318,7 @@
 		},
 		{
 			"english": "tonight",
-			"russian": "сегодня вечером/ночью"
+			"russian": "сегодня"
 		},
 		{
 			"english": "tongue",
@@ -371,10 +339,6 @@
 		{
 			"english": "tire",
 			"russian": "уставать"
-		},
-		{
-			"english": "tip",
-			"russian": "тонкий конец"
 		},
 		{
 			"english": "time",
@@ -409,12 +373,8 @@
 			"russian": "тысяча"
 		},
 		{
-			"english": "though",
-			"russian": "хотя, несмотря на"
-		},
-		{
 			"english": "this",
-			"russian": "этот, эта, это"
+			"russian": "этот"
 		},
 		{
 			"english": "third",
@@ -438,7 +398,7 @@
 		},
 		{
 			"english": "test",
-			"russian": "проверка, тест"
+			"russian": "тест"
 		},
 		{
 			"english": "terrible",
@@ -449,16 +409,12 @@
 			"russian": "срок"
 		},
 		{
-			"english": "tend",
-			"russian": "иметь тенденцию (к чему-л.)"
-		},
-		{
 			"english": "ten",
 			"russian": "десять"
 		},
 		{
 			"english": "tell",
-			"russian": "говорить, рассказывать"
+			"russian": "рассказывать"
 		},
 		{
 			"english": "tear",
@@ -482,7 +438,7 @@
 		},
 		{
 			"english": "talk",
-			"russian": "говорить, болтать"
+			"russian": "говорить"
 		},
 		{
 			"english": "take",
@@ -510,7 +466,7 @@
 		},
 		{
 			"english": "survive",
-			"russian": "выдержать, оставаться в живых"
+			"russian": "выжить"
 		},
 		{
 			"english": "surround",
@@ -641,10 +597,6 @@
 			"russian": "останавливаться"
 		},
 		{
-			"english": "still",
-			"russian": "до сих пор, (всё) ещё"
-		},
-		{
 			"english": "stick",
 			"russian": "приклеивать"
 		},
@@ -658,7 +610,7 @@
 		},
 		{
 			"english": "stay",
-			"russian": "жить, гостить (у кого-л.)"
+			"russian": "жить"
 		},
 		{
 			"english": "station",
@@ -674,11 +626,11 @@
 		},
 		{
 			"english": "stare",
-			"russian": "пристально глядеть"
+			"russian": "пристально"
 		},
 		{
 			"english": "standard",
-			"russian": "норма, стандарт"
+			"russian": "норма"
 		},
 		{
 			"english": "stand",
@@ -686,7 +638,7 @@
 		},
 		{
 			"english": "stage",
-			"russian": "подмостки, сцена"
+			"russian": "сцена"
 		},
 		{
 			"english": "spring",
@@ -722,7 +674,7 @@
 		},
 		{
 			"english": "speak",
-			"russian": "говорить, сказать"
+			"russian": "сказать"
 		},
 		{
 			"english": "space",
@@ -742,11 +694,11 @@
 		},
 		{
 			"english": "sort",
-			"russian": "сортировать, распределять"
+			"russian": "сортировать"
 		},
 		{
 			"english": "sorry",
-			"russian": "огорчённый, полный сожаления"
+			"russian": "огорчённый"
 		},
 		{
 			"english": "soon",
@@ -763,18 +715,6 @@
 		{
 			"english": "sometimes",
 			"russian": "иногда"
-		},
-		{
-			"english": "something",
-			"russian": "кое-что, что-нибудь"
-		},
-		{
-			"english": "somehow",
-			"russian": "как-нибудь"
-		},
-		{
-			"english": "somebody",
-			"russian": "кто-нибудь, кто-то"
 		},
 		{
 			"english": "solve",
@@ -838,7 +778,7 @@
 		},
 		{
 			"english": "skill",
-			"russian": "мастерство, навык"
+			"russian": "мастерство"
 		},
 		{
 			"english": "size",
@@ -866,15 +806,11 @@
 		},
 		{
 			"english": "single",
-			"russian": "один, единственный"
+			"russian": "единственный"
 		},
 		{
 			"english": "sing",
 			"russian": "петь"
-		},
-		{
-			"english": "since",
-			"russian": "с тех пор"
 		},
 		{
 			"english": "simply",
@@ -890,7 +826,7 @@
 		},
 		{
 			"english": "sign",
-			"russian": "знак, символ"
+			"russian": "знак"
 		},
 		{
 			"english": "sight",
@@ -918,7 +854,7 @@
 		},
 		{
 			"english": "shout",
-			"russian": "кричать (на кого-л. / кому-л.)"
+			"russian": "кричать"
 		},
 		{
 			"english": "shoulder",
@@ -942,7 +878,7 @@
 		},
 		{
 			"english": "shock",
-			"russian": "потрясение, шок"
+			"russian": "шок"
 		},
 		{
 			"english": "ship",
@@ -986,7 +922,7 @@
 		},
 		{
 			"english": "settle",
-			"russian": "урегулировать, разрешить (спор, конфликт)"
+			"russian": "урегулировать"
 		},
 		{
 			"english": "set",
@@ -1014,7 +950,7 @@
 		},
 		{
 			"english": "send",
-			"russian": "посылать, отправлять"
+			"russian": "отправлять"
 		},
 		{
 			"english": "sell",
@@ -1053,16 +989,8 @@
 			"russian": "море"
 		},
 		{
-			"english": "scream",
-			"russian": "пронзительно кричать"
-		},
-		{
 			"english": "science",
 			"russian": "наука"
-		},
-		{
-			"english": "scene",
-			"russian": "место действия (в пьесе, романе и т. п.)"
 		},
 		{
 			"english": "scare",
@@ -1079,10 +1007,6 @@
 		{
 			"english": "satisfy",
 			"russian": "удовлетворять"
-		},
-		{
-			"english": "same",
-			"russian": "тот же самый"
 		},
 		{
 			"english": "safe",
@@ -1126,7 +1050,7 @@
 		},
 		{
 			"english": "rise",
-			"russian": "восходить, вставать"
+			"russian": "подниматься"
 		},
 		{
 			"english": "rip",
@@ -1134,15 +1058,11 @@
 		},
 		{
 			"english": "ring",
-			"russian": "звенеть, звучать"
+			"russian": "звенеть"
 		},
 		{
 			"english": "right",
-			"russian": "правый, верный"
-		},
-		{
-			"english": "ride",
-			"russian": "ездить верхом"
+			"russian": "верный"
 		},
 		{
 			"english": "rich",
@@ -1150,7 +1070,7 @@
 		},
 		{
 			"english": "reveal",
-			"russian": "открывать,  разоблачать"
+			"russian": "разоблачать"
 		},
 		{
 			"english": "return",
@@ -1170,7 +1090,7 @@
 		},
 		{
 			"english": "resource",
-			"russian": "запасы, ресурсы (обычно во мн.ч.)"
+			"russian": "запасы"
 		},
 		{
 			"english": "research",
@@ -1182,7 +1102,7 @@
 		},
 		{
 			"english": "represent",
-			"russian": "представлять (в виде кого-л. / чего-л.)"
+			"russian": "представлять"
 		},
 		{
 			"english": "report",
@@ -1218,7 +1138,7 @@
 		},
 		{
 			"english": "release",
-			"russian": "релиз, выпуск в свет (фильма, книги)"
+			"russian": "релиз"
 		},
 		{
 			"english": "relax",
@@ -1246,7 +1166,7 @@
 		},
 		{
 			"english": "reflect",
-			"russian": "отражать (свет, тепло, звук)"
+			"russian": "отражать"
 		},
 		{
 			"english": "refer",
@@ -1273,12 +1193,8 @@
 			"russian": "причина"
 		},
 		{
-			"english": "really",
-			"russian": "действительно, в самом деле"
-		},
-		{
 			"english": "realize",
-			"russian": "осуществлять, выполнять  (намерение)"
+			"russian": "осуществлять"
 		},
 		{
 			"english": "reality",
@@ -1286,11 +1202,11 @@
 		},
 		{
 			"english": "real",
-			"russian": "реальный, настоящий"
+			"russian": "настоящий"
 		},
 		{
 			"english": "ready",
-			"russian": "готовый (к действию)"
+			"russian": "готовый"
 		},
 		{
 			"english": "read",
@@ -1298,11 +1214,11 @@
 		},
 		{
 			"english": "reach",
-			"russian": "дотягиваться, достигать"
+			"russian": "достигать"
 		},
 		{
 			"english": "rate",
-			"russian": "норма, ставка"
+			"russian": "ставка"
 		},
 		{
 			"english": "range",
@@ -1318,7 +1234,7 @@
 		},
 		{
 			"english": "race",
-			"russian": "гонка, скачки"
+			"russian": "скачки"
 		},
 		{
 			"english": "quite",
@@ -1346,7 +1262,7 @@
 		},
 		{
 			"english": "put",
-			"russian": "класть, ставить"
+			"russian": "класть"
 		},
 		{
 			"english": "push",
@@ -1426,7 +1342,7 @@
 		},
 		{
 			"english": "pretty",
-			"russian": "милый, прелестный"
+			"russian": "милый"
 		},
 		{
 			"english": "pretend",
@@ -1458,15 +1374,15 @@
 		},
 		{
 			"english": "powerful",
-			"russian": "крепкий, могучий"
+			"russian": "крепкий"
 		},
 		{
 			"english": "power",
-			"russian": "сила, мощь"
+			"russian": "сила"
 		},
 		{
 			"english": "pour",
-			"russian": "литься (о воде, свете)"
+			"russian": "литься"
 		},
 		{
 			"english": "pound",
@@ -1474,7 +1390,7 @@
 		},
 		{
 			"english": "post",
-			"russian": "почта, корреспонденция"
+			"russian": "почта"
 		},
 		{
 			"english": "possible",
@@ -1494,7 +1410,7 @@
 		},
 		{
 			"english": "point",
-			"russian": "пункт, момент"
+			"russian": "пункт"
 		},
 		{
 			"english": "pocket",
@@ -1503,10 +1419,6 @@
 		{
 			"english": "pleasure",
 			"russian": "удовольствие"
-		},
-		{
-			"english": "please",
-			"russian": "пожалуйста!"
 		},
 		{
 			"english": "play",
@@ -1594,7 +1506,7 @@
 		},
 		{
 			"english": "particular",
-			"russian": "редкий, особенный"
+			"russian": "редкий"
 		},
 		{
 			"english": "part",
@@ -1625,12 +1537,8 @@
 			"russian": "снаружи"
 		},
 		{
-			"english": "ourself",
-			"russian": "себя, себе, собой"
-		},
-		{
 			"english": "original",
-			"russian": "начальный, настоящий"
+			"russian": "начальный"
 		},
 		{
 			"english": "order",
@@ -1642,7 +1550,7 @@
 		},
 		{
 			"english": "operate",
-			"russian": "работать, действовать"
+			"russian": "действовать"
 		},
 		{
 			"english": "open",
@@ -1659,10 +1567,6 @@
 		{
 			"english": "old",
 			"russian": "старый"
-		},
-		{
-			"english": "okay",
-			"russian": "ладно!, хорошо!"
 		},
 		{
 			"english": "often",
@@ -1694,7 +1598,7 @@
 		},
 		{
 			"english": "now",
-			"russian": "сейчас, теперь"
+			"russian": "сейчас"
 		},
 		{
 			"english": "notice",
@@ -1702,11 +1606,11 @@
 		},
 		{
 			"english": "nothing",
-			"russian": "ничего, ничто"
+			"russian": "ничего"
 		},
 		{
 			"english": "note",
-			"russian": "заметка, запись"
+			"russian": "заметка"
 		},
 		{
 			"english": "north",
@@ -1714,11 +1618,11 @@
 		},
 		{
 			"english": "normal",
-			"russian": "нормальный, обычный"
+			"russian": "обычный"
 		},
 		{
 			"english": "none",
-			"russian": "ничуть, нисколько"
+			"russian": "нисколько"
 		},
 		{
 			"english": "noise",
@@ -1753,12 +1657,8 @@
 			"russian": "никогда"
 		},
 		{
-			"english": "neither",
-			"russian": "ни тот, ни другой"
-		},
-		{
 			"english": "need",
-			"russian": "нуждаться (в чём-л.)"
+			"russian": "нуждаться"
 		},
 		{
 			"english": "neck",
@@ -1770,7 +1670,7 @@
 		},
 		{
 			"english": "near",
-			"russian": "возле, близко"
+			"russian": "близко"
 		},
 		{
 			"english": "nature",
@@ -1782,7 +1682,7 @@
 		},
 		{
 			"english": "nation",
-			"russian": "народ, нация"
+			"russian": "народ"
 		},
 		{
 			"english": "music",
@@ -1794,7 +1694,7 @@
 		},
 		{
 			"english": "much",
-			"russian": "очень, много"
+			"russian": "много"
 		},
 		{
 			"english": "movie",
@@ -1830,7 +1730,7 @@
 		},
 		{
 			"english": "moment",
-			"russian": "миг, момент"
+			"russian": "момент"
 		},
 		{
 			"english": "model",
@@ -1853,10 +1753,6 @@
 			"russian": "минута"
 		},
 		{
-			"english": "mine",
-			"russian": "мой, моя, моё"
-		},
-		{
 			"english": "mind",
 			"russian": "обращать внимание"
 		},
@@ -1874,7 +1770,7 @@
 		},
 		{
 			"english": "method",
-			"russian": "метод, способ"
+			"russian": "метод"
 		},
 		{
 			"english": "message",
@@ -1901,14 +1797,6 @@
 			"russian": "мера"
 		},
 		{
-			"english": "mean",
-			"russian": "иметь в виду"
-		},
-		{
-			"english": "maybe",
-			"russian": "может быть"
-		},
-		{
 			"english": "material",
 			"russian": "материал"
 		},
@@ -1929,20 +1817,12 @@
 			"russian": "март"
 		},
 		{
-			"english": "many",
-			"russian": "многие, много"
-		},
-		{
 			"english": "manage",
 			"russian": "руководить"
 		},
 		{
 			"english": "make",
-			"russian": "делать, создавать"
-		},
-		{
-			"english": "major",
-			"russian": "более важный"
+			"russian": "создавать"
 		},
 		{
 			"english": "main",
@@ -1954,11 +1834,11 @@
 		},
 		{
 			"english": "machine",
-			"russian": "машина, механизм"
+			"russian": "механизм"
 		},
 		{
 			"english": "luck",
-			"russian": "везение, удача"
+			"russian": "везение"
 		},
 		{
 			"english": "low",
@@ -1981,16 +1861,12 @@
 			"russian": "одинокий"
 		},
 		{
-			"english": "lock",
-			"russian": "запирать ключом"
-		},
-		{
 			"english": "local",
 			"russian": "местный"
 		},
 		{
 			"english": "load",
-			"russian": "загружать (программу)"
+			"russian": "загружать"
 		},
 		{
 			"english": "little",
@@ -2049,24 +1925,16 @@
 			"russian": "урок"
 		},
 		{
-			"english": "less",
-			"russian": "меньше, менее"
-		},
-		{
 			"english": "leg",
-			"russian": "нога (от бедра до ступни)"
+			"russian": "нога"
 		},
 		{
 			"english": "leave",
 			"russian": "покидать"
 		},
 		{
-			"english": "least",
-			"russian": "в наименьшей степени"
-		},
-		{
 			"english": "learn",
-			"russian": "учиться, учить (что-л.)"
+			"russian": "учиться"
 		},
 		{
 			"english": "lean",
@@ -2083,10 +1951,6 @@
 		{
 			"english": "lead",
 			"russian": "вести"
-		},
-		{
-			"english": "lay",
-			"russian": "класть, положить"
 		},
 		{
 			"english": "late",
@@ -2110,11 +1974,7 @@
 		},
 		{
 			"english": "lady",
-			"russian": "леди, госпожа"
-		},
-		{
-			"english": "lack",
-			"russian": "недостаток, отсутствие (чего-л.)"
+			"russian": "госпожа"
 		},
 		{
 			"english": "knowledge",
@@ -2134,7 +1994,7 @@
 		},
 		{
 			"english": "kid",
-			"russian": "ребёнок, малыш (разг.)"
+			"russian": "ребёнок"
 		},
 		{
 			"english": "key",
@@ -2142,11 +2002,7 @@
 		},
 		{
 			"english": "keep",
-			"russian": "держать, хранить"
-		},
-		{
-			"english": "just",
-			"russian": "как раз, только что"
+			"russian": "хранить"
 		},
 		{
 			"english": "jump",
@@ -2162,11 +2018,11 @@
 		},
 		{
 			"english": "join",
-			"russian": "присоединяться (к кому-л.)"
+			"russian": "присоединяться"
 		},
 		{
 			"english": "issue",
-			"russian": "проблема, дело"
+			"russian": "проблема"
 		},
 		{
 			"english": "involve",
@@ -2193,10 +2049,6 @@
 			"russian": "вместо"
 		},
 		{
-			"english": "inside",
-			"russian": "внутри, в помещении"
-		},
-		{
 			"english": "information",
 			"russian": "информация"
 		},
@@ -2210,11 +2062,7 @@
 		},
 		{
 			"english": "include",
-			"russian": "заключать, включать в себя"
-		},
-		{
-			"english": "in",
-			"russian": "внутри, в"
+			"russian": "заключать"
 		},
 		{
 			"english": "improve",
@@ -2246,7 +2094,7 @@
 		},
 		{
 			"english": "idea",
-			"russian": "идея, мысль"
+			"russian": "идея"
 		},
 		{
 			"english": "ice",
@@ -2255,10 +2103,6 @@
 		{
 			"english": "husband",
 			"russian": "муж"
-		},
-		{
-			"english": "hurt",
-			"russian": "причинить боль"
 		},
 		{
 			"english": "hunt",
@@ -2273,10 +2117,6 @@
 			"russian": "человеческий"
 		},
 		{
-			"english": "huh",
-			"russian": "ха! (выражает презрение, удивление)"
-		},
-		{
 			"english": "huge",
 			"russian": "огромный"
 		},
@@ -2286,7 +2126,7 @@
 		},
 		{
 			"english": "house",
-			"russian": "дом, здание"
+			"russian": "дом"
 		},
 		{
 			"english": "hour",
@@ -2306,11 +2146,7 @@
 		},
 		{
 			"english": "honey",
-			"russian": "милый, милая"
-		},
-		{
-			"english": "home",
-			"russian": "дом, жилище"
+			"russian": "милый"
 		},
 		{
 			"english": "hole",
@@ -2322,7 +2158,7 @@
 		},
 		{
 			"english": "hit",
-			"russian": "ударять (по чему-л.)"
+			"russian": "ударять"
 		},
 		{
 			"english": "history",
@@ -2339,10 +2175,6 @@
 		{
 			"english": "hide",
 			"russian": "прятаться"
-		},
-		{
-			"english": "hey",
-			"russian": "эй!, привет!"
 		},
 		{
 			"english": "hello",
@@ -2394,7 +2226,7 @@
 		},
 		{
 			"english": "handle",
-			"russian": "справляться (с чем-л.)"
+			"russian": "справляться"
 		},
 		{
 			"english": "hand",
@@ -2406,7 +2238,7 @@
 		},
 		{
 			"english": "guy",
-			"russian": "парень (разг.)"
+			"russian": "парень"
 		},
 		{
 			"english": "guide",
@@ -2426,15 +2258,15 @@
 		},
 		{
 			"english": "group",
-			"russian": "группа (людей, предметов)"
+			"russian": "группа"
 		},
 		{
 			"english": "great",
-			"russian": "большой, великий"
+			"russian": "великий"
 		},
 		{
 			"english": "grant",
-			"russian": "грант, стипендия"
+			"russian": "стипендия"
 		},
 		{
 			"english": "grab",
@@ -2470,7 +2302,7 @@
 		},
 		{
 			"english": "give",
-			"russian": "дать, передать"
+			"russian": "дать"
 		},
 		{
 			"english": "girl",
@@ -2494,7 +2326,7 @@
 		},
 		{
 			"english": "gather",
-			"russian": "собираться (о людях, животных)"
+			"russian": "собираться"
 		},
 		{
 			"english": "gate",
@@ -2514,7 +2346,7 @@
 		},
 		{
 			"english": "funny",
-			"russian": "забавный, смешной"
+			"russian": "забавный"
 		},
 		{
 			"english": "function",
@@ -2527,10 +2359,6 @@
 		{
 			"english": "full",
 			"russian": "полный"
-		},
-		{
-			"english": "front",
-			"russian": "передняя часть"
 		},
 		{
 			"english": "frighten",
@@ -2554,11 +2382,11 @@
 		},
 		{
 			"english": "forward",
-			"russian": "передний, направленный вперёд"
+			"russian": "передний"
 		},
 		{
 			"english": "form",
-			"russian": "создавать (по образцу, модели)"
+			"russian": "создавать"
 		},
 		{
 			"english": "forgive",
@@ -2571,10 +2399,6 @@
 		{
 			"english": "forever",
 			"russian": "навсегда"
-		},
-		{
-			"english": "fore",
-			"russian": "носовая часть судна"
 		},
 		{
 			"english": "force",
@@ -2610,7 +2434,7 @@
 		},
 		{
 			"english": "flow",
-			"russian": "струиться, течь"
+			"russian": "течь"
 		},
 		{
 			"english": "floor",
@@ -2630,7 +2454,7 @@
 		},
 		{
 			"english": "fix",
-			"russian": "устанавливать, ремонтировать"
+			"russian": "ремонтировать"
 		},
 		{
 			"english": "five",
@@ -2638,7 +2462,7 @@
 		},
 		{
 			"english": "fit",
-			"russian": "быть впору, подходить (к чему-л.)"
+			"russian": "подходить"
 		},
 		{
 			"english": "fish",
@@ -2662,15 +2486,11 @@
 		},
 		{
 			"english": "fine",
-			"russian": "отлично, прекрасно"
+			"russian": "отлично"
 		},
 		{
 			"english": "find",
 			"russian": "находить"
-		},
-		{
-			"english": "finally",
-			"russian": "в конце концов"
 		},
 		{
 			"english": "final",
@@ -2682,7 +2502,7 @@
 		},
 		{
 			"english": "figure",
-			"russian": "думать, полагать"
+			"russian": "думать"
 		},
 		{
 			"english": "fight",
@@ -2698,7 +2518,7 @@
 		},
 		{
 			"english": "fee",
-			"russian": "вознаграждение, гонорар"
+			"russian": "вознаграждение"
 		},
 		{
 			"english": "feature",
@@ -2734,11 +2554,7 @@
 		},
 		{
 			"english": "fair",
-			"russian": "порядочный, честный"
-		},
-		{
-			"english": "fail",
-			"russian": "потерпеть неудачу"
+			"russian": "порядочный"
 		},
 		{
 			"english": "fade",
@@ -2762,7 +2578,7 @@
 		},
 		{
 			"english": "express",
-			"russian": "изображать, выражать"
+			"russian": "изображать"
 		},
 		{
 			"english": "explain",
@@ -2806,7 +2622,7 @@
 		},
 		{
 			"english": "evidence",
-			"russian": "основание, доказательство"
+			"russian": "доказательство"
 		},
 		{
 			"english": "everywhere",
@@ -2815,10 +2631,6 @@
 		{
 			"english": "everything",
 			"russian": "всё"
-		},
-		{
-			"english": "everybody",
-			"russian": "каждый, всякий человек"
 		},
 		{
 			"english": "every",
@@ -2889,14 +2701,6 @@
 			"russian": "пустой"
 		},
 		{
-			"english": "else",
-			"russian": "ещё, кроме"
-		},
-		{
-			"english": "either",
-			"russian": "один из двух"
-		},
-		{
 			"english": "eight",
 			"russian": "восемь"
 		},
@@ -2906,7 +2710,7 @@
 		},
 		{
 			"english": "effect",
-			"russian": "результат, влияние"
+			"russian": "результат"
 		},
 		{
 			"english": "edge",
@@ -2958,7 +2762,7 @@
 		},
 		{
 			"english": "drive",
-			"russian": "ездить, везти"
+			"russian": "ездить"
 		},
 		{
 			"english": "drink",
@@ -3042,7 +2846,7 @@
 		},
 		{
 			"english": "different",
-			"russian": "непохожий, другой"
+			"russian": "другой"
 		},
 		{
 			"english": "difference",
@@ -3066,7 +2870,7 @@
 		},
 		{
 			"english": "desire",
-			"russian": "жаждать, очень хотеть"
+			"russian": "жаждать"
 		},
 		{
 			"english": "design",
@@ -3082,7 +2886,7 @@
 		},
 		{
 			"english": "depend",
-			"russian": "зависеть (от кого-л. / чего-л.)"
+			"russian": "зависеть"
 		},
 		{
 			"english": "deny",
@@ -3121,12 +2925,8 @@
 			"russian": "смерть"
 		},
 		{
-			"english": "dear",
-			"russian": "дорогой, милый"
-		},
-		{
 			"english": "deal",
-			"russian": "сделка,  договор"
+			"russian": "договор"
 		},
 		{
 			"english": "day",
@@ -3142,11 +2942,11 @@
 		},
 		{
 			"english": "data",
-			"russian": "данные, факты"
+			"russian": "данные"
 		},
 		{
 			"english": "darkness",
-			"russian": "темнота, ночь"
+			"russian": "темнота"
 		},
 		{
 			"english": "dark",
@@ -3174,7 +2974,7 @@
 		},
 		{
 			"english": "current",
-			"russian": "текущий, данный"
+			"russian": "текущий"
 		},
 		{
 			"english": "cup",
@@ -3182,7 +2982,7 @@
 		},
 		{
 			"english": "cry",
-			"russian": "кричать, плакать"
+			"russian": "плакать"
 		},
 		{
 			"english": "crowd",
@@ -3190,7 +2990,7 @@
 		},
 		{
 			"english": "cross",
-			"russian": "пересекать, переходить (через что-л.)"
+			"russian": "пересекать"
 		},
 		{
 			"english": "crime",
@@ -3210,7 +3010,7 @@
 		},
 		{
 			"english": "crash",
-			"russian": "с грохотом разрушать, разбивать"
+			"russian": "разбивать"
 		},
 		{
 			"english": "crack",
@@ -3234,7 +3034,7 @@
 		},
 		{
 			"english": "count",
-			"russian": "считать, полагать"
+			"russian": "считать"
 		},
 		{
 			"english": "cost",
@@ -3250,7 +3050,7 @@
 		},
 		{
 			"english": "cool",
-			"russian": "прохладный, свежий"
+			"russian": "свежий"
 		},
 		{
 			"english": "convince",
@@ -3258,7 +3058,7 @@
 		},
 		{
 			"english": "conversation",
-			"russian": "разговор, беседа"
+			"russian": "беседа"
 		},
 		{
 			"english": "continue",
@@ -3270,7 +3070,7 @@
 		},
 		{
 			"english": "consider",
-			"russian": "рассматривать, обсуждать"
+			"russian": "обсуждать"
 		},
 		{
 			"english": "connect",
@@ -3278,7 +3078,7 @@
 		},
 		{
 			"english": "confuse",
-			"russian": "путать, смущать"
+			"russian": "путать"
 		},
 		{
 			"english": "condition",
@@ -3286,7 +3086,7 @@
 		},
 		{
 			"english": "concern",
-			"russian": "касаться, иметь отношение"
+			"russian": "касаться"
 		},
 		{
 			"english": "complicate",
@@ -3310,7 +3110,7 @@
 		},
 		{
 			"english": "community",
-			"russian": "местное сообщество"
+			"russian": "сообщество"
 		},
 		{
 			"english": "common",
@@ -3318,7 +3118,7 @@
 		},
 		{
 			"english": "commit",
-			"russian": "совершать (плохой поступок)"
+			"russian": "совершать"
 		},
 		{
 			"english": "comment",
@@ -3350,7 +3150,7 @@
 		},
 		{
 			"english": "clothe",
-			"russian": "одевать (кого-л.)"
+			"russian": "одевать"
 		},
 		{
 			"english": "close",
@@ -3362,11 +3162,11 @@
 		},
 		{
 			"english": "clearly",
-			"russian": "ясно, очевидно"
+			"russian": "очевидно"
 		},
 		{
 			"english": "clear",
-			"russian": "светлый, ясный"
+			"russian": "светлый"
 		},
 		{
 			"english": "clean",
@@ -3418,7 +3218,7 @@
 		},
 		{
 			"english": "charge",
-			"russian": "возлагать ответственность"
+			"russian": "ответственность"
 		},
 		{
 			"english": "change",
@@ -3426,11 +3226,11 @@
 		},
 		{
 			"english": "chance",
-			"russian": "шанс, возможность"
+			"russian": "шанс"
 		},
 		{
 			"english": "challenge",
-			"russian": "вызов, сложная задача"
+			"russian": "вызов"
 		},
 		{
 			"english": "chair",
@@ -3510,11 +3310,7 @@
 		},
 		{
 			"english": "button",
-			"russian": "пуговица; кнопка"
-		},
-		{
-			"english": "but",
-			"russian": "но"
+			"russian": "пуговица"
 		},
 		{
 			"english": "busy",
@@ -3522,7 +3318,7 @@
 		},
 		{
 			"english": "business",
-			"russian": "дело, работа"
+			"russian": "дело"
 		},
 		{
 			"english": "bus",
@@ -3530,7 +3326,7 @@
 		},
 		{
 			"english": "burn",
-			"russian": "гореть, пылать"
+			"russian": "гореть"
 		},
 		{
 			"english": "build",
@@ -3590,7 +3386,7 @@
 		},
 		{
 			"english": "blow",
-			"russian": "веять, дуть"
+			"russian": "дуть"
 		},
 		{
 			"english": "blood",
@@ -3618,7 +3414,7 @@
 		},
 		{
 			"english": "bit",
-			"russian": "кусочек, частица"
+			"russian": "частица"
 		},
 		{
 			"english": "bird",
@@ -3635,10 +3431,6 @@
 		{
 			"english": "better",
 			"russian": "лучший"
-		},
-		{
-			"english": "bet",
-			"russian": "делать ставку на (что-л.)"
 		},
 		{
 			"english": "best",
@@ -3662,7 +3454,7 @@
 		},
 		{
 			"english": "behind",
-			"russian": "сзади, позади"
+			"russian": "сзади"
 		},
 		{
 			"english": "begin",
@@ -3686,7 +3478,7 @@
 		},
 		{
 			"english": "bear",
-			"russian": "носить, нести"
+			"russian": "носить"
 		},
 		{
 			"english": "battle",
@@ -3710,11 +3502,11 @@
 		},
 		{
 			"english": "back",
-			"russian": "обратно, назад"
+			"russian": "назад"
 		},
 		{
 			"english": "baby",
-			"russian": "ребёнок, младенец"
+			"russian": "младенец"
 		},
 		{
 			"english": "away",
@@ -3746,7 +3538,7 @@
 		},
 		{
 			"english": "article",
-			"russian": "статья (в газете, журнале)"
+			"russian": "статья"
 		},
 		{
 			"english": "art",
@@ -3762,7 +3554,7 @@
 		},
 		{
 			"english": "arm",
-			"russian": "рука (от кисти до плеча)"
+			"russian": "рука"
 		},
 		{
 			"english": "argue",
@@ -3782,31 +3574,7 @@
 		},
 		{
 			"english": "apart",
-			"russian": "в стороне"
-		},
-		{
-			"english": "anywhere",
-			"russian": "где-нибудь"
-		},
-		{
-			"english": "anyway",
-			"russian": "как бы то ни было"
-		},
-		{
-			"english": "anything",
-			"russian": "что-нибудь"
-		},
-		{
-			"english": "anyone",
-			"russian": "кто-нибудь"
-		},
-		{
-			"english": "anymore",
-			"russian": "больше не"
-		},
-		{
-			"english": "anybody",
-			"russian": "кто-нибудь"
+			"russian": "сторона"
 		},
 		{
 			"english": "another",
@@ -3815,10 +3583,6 @@
 		{
 			"english": "animal",
 			"russian": "животное"
-		},
-		{
-			"english": "and",
-			"russian": "и, а"
 		},
 		{
 			"english": "amount",
@@ -3845,20 +3609,16 @@
 			"russian": "хотя"
 		},
 		{
-			"english": "also",
-			"russian": "тоже, также"
-		},
-		{
 			"english": "already",
 			"russian": "уже"
 		},
 		{
 			"english": "along",
-			"russian": "вдоль, по"
+			"russian": "вдоль"
 		},
 		{
 			"english": "alone",
-			"russian": "единственный, один"
+			"russian": "единственный"
 		},
 		{
 			"english": "almost",
@@ -3889,10 +3649,6 @@
 			"russian": "соглашаться"
 		},
 		{
-			"english": "ago",
-			"russian": "тому назад"
-		},
-		{
 			"english": "age",
 			"russian": "возраст"
 		},
@@ -3901,16 +3657,12 @@
 			"russian": "испуганный"
 		},
 		{
-			"english": "affect",
-			"russian": "оказывать влияние"
-		},
-		{
 			"english": "advance",
-			"russian": "продвигаться вперёд"
+			"russian": "продвигаться"
 		},
 		{
 			"english": "admit",
-			"russian": "допускать, соглашаться"
+			"russian": "соглашаться"
 		},
 		{
 			"english": "address",
@@ -3919,10 +3671,6 @@
 		{
 			"english": "add",
 			"russian": "добавлять"
-		},
-		{
-			"english": "actually",
-			"russian": "на самом деле"
 		},
 		{
 			"english": "activity",
@@ -3938,7 +3686,7 @@
 		},
 		{
 			"english": "across",
-			"russian": "сквозь, через"
+			"russian": "сквозь"
 		},
 		{
 			"english": "achieve",
@@ -3961,14 +3709,6 @@
 			"russian": "совершенно"
 		},
 		{
-			"english": "above",
-			"russian": "над; свыше; adv- наверху, выше"
-		},
-		{
-			"english": "about",
-			"russian": "о, насчёт"
-		},
-		{
 			"english": "able",
 			"russian": "способный"
 		},
@@ -3982,7 +3722,7 @@
 		},
 		{
 			"english": "true",
-			"russian": "верный, правильный"
+			"russian": "правильный"
 		},
 		{
 			"english": "lucky",

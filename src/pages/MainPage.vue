@@ -262,7 +262,7 @@ const exitGame = (): void => {
         <div class="text-white text-3xl mb-12">Total Score: {{ scoreStore.totalScore }}</div>
         <div class="flex gap-4">
           <ButtonComponent color="violet" :cb="startGame">Play Again</ButtonComponent>
-          <ButtonComponent color="violet" :cb="exitGame">Exit</ButtonComponent>
+          <ButtonComponent color="amber" :cb="exitGame">Exit</ButtonComponent>
         </div>
       </div>
     </main>
