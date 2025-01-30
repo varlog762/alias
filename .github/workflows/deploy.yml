@@ -11,8 +11,13 @@ jobs:
       # Шаг 1: Забрать код из репозитория
       - name: Checkout code
         uses: actions/checkout@v3
-
-      # Шаг 2: Собрать Docker-образ и запушить в реестр
+      # Авторизация в DockerHub
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      # Шаг 3: Собрать Docker-образ и запушить в реестр
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v4
         with:
@@ -20,9 +25,6 @@ jobs:
           push: true
           tags: |
             gashek762/alias:latest
-          secrets: |
-            DOCKERHUB_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
-            DOCKERHUB_TOKEN=${{ secrets.DOCKERHUB_TOKEN }}
 
       # Шаг 3: Подключиться к серверу и обновить контейнер
       - name: Deploy to Server
