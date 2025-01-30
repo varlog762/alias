@@ -4,12 +4,14 @@ import { computed, ref } from 'vue'
 import type { GameStatusType, WordLanguagesType } from '@/models'
 import wordsData from '@/assets/json/top1000.json'
 import { useScoreStore } from '@/stores/score'
+import ButtonComponent from '@/components/ui/ButtonComponent.vue'
 import {
   saveWordsToLocalStorage,
   getWordsFromLocalStorage,
   updateWordsInLocalStorage,
-} from '@/utils/localStorageManager'
-import ButtonComponent from '@/components/ui/ButtonComponent.vue'
+  // startTimer,
+  // stopTimer,
+} from '@/utils'
 
 const gameStatus = ref<GameStatusType>('notStarted')
 const timer = ref<number>(0)
@@ -260,7 +262,7 @@ const exitGame = (): void => {
         v-if="gameStatus === 'finished'"
       >
         <div class="text-white text-3xl mb-12">Total Score: {{ scoreStore.totalScore }}</div>
-        <div class="flex gap-4">
+        <div class="flex flex-col gap-4">
           <ButtonComponent color="violet" :cb="startGame">Play Again</ButtonComponent>
           <ButtonComponent color="amber" :cb="exitGame">Exit</ButtonComponent>
         </div>
