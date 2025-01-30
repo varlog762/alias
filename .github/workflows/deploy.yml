@@ -26,7 +26,7 @@ jobs:
 
       # Шаг 3: Подключиться к серверу и обновить контейнер
       - name: Deploy to Server
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USERNAME }}
