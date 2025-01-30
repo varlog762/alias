@@ -19,7 +19,7 @@ jobs:
           context: .
           push: true
           tags: |
-            your-dockerhub-username/your-app:latest
+            gashek762/alias:latest
           secrets: |
             DOCKERHUB_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
             DOCKERHUB_TOKEN=${{ secrets.DOCKERHUB_TOKEN }}
@@ -32,7 +32,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            docker pull your-dockerhub-username/your-app:latest
-            docker stop your-app || true
-            docker rm your-app || true
-            docker run -d --name your-app -p 80:80 your-dockerhub-username/your-app:latest
+            docker pull gashek762/alias:latest
+            docker stop alias || true
+            docker rm alias || true
+            docker run -d --name alias -p 8084:80 gashek762/alias:latest
