@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue'
 
 import type { GameStatusType, WordLanguagesType } from '@/models'
-import wordsData from '@/assets/json/top1000.json'
+import wordsData from '@/assets/json/russian.json'
 import { useScoreStore } from '@/stores/score'
 import ButtonComponent from '@/components/ui/ButtonComponent.vue'
 import {
@@ -254,6 +254,7 @@ const exitGame = (): void => {
         <div class="flex gap-4">
           <ButtonComponent color="red" :cb="skipCurrentWord">Skip</ButtonComponent>
           <ButtonComponent color="green" :cb="handleWordSuccess">Success!</ButtonComponent>
+          <ButtonComponent color="orange" :cb="handleWordSuccess">Success!</ButtonComponent>
         </div>
       </div>
       <!-- Results -->
