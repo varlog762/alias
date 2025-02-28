@@ -9,6 +9,7 @@ import {
   saveWordsToLocalStorage,
   getWordsFromLocalStorage,
   updateWordsInLocalStorage,
+  savePoorWords,
   // startTimer,
   // stopTimer,
 } from '@/utils'
@@ -17,6 +18,8 @@ const gameStatus = ref<GameStatusType>('notStarted')
 const timer = ref<number>(0)
 const words = ref<string[]>([])
 const playedWords = ref<string[]>([])
+// TODO: remove this variable
+const poorWords = ref<string[]>([])
 
 const currentWord = ref<string | null>(null)
 const capitalizedWord = computed<string | null>(() => {
@@ -28,7 +31,6 @@ const capitalizedWord = computed<string | null>(() => {
 })
 
 const wordsLanguage = ref<WordLanguagesType>('russian')
-console.log(wordsLanguage.value)
 
 const roundCount = ref<number>(0)
 
@@ -132,6 +134,22 @@ const processWord = (isSuccess: boolean): void => {
   showRandomWord()
 }
 
+// TODO: remove this method
+const handlePoorWord = () => {
+  filterOutCurrentWord()
+
+  if (currentWord.value) {
+    poorWords.value.push(currentWord.value)
+  }
+  updatePlayedWords()
+
+  if (isGameOver()) {
+    finishRound()
+    return
+  }
+  showRandomWord()
+}
+
 /**
  * Updates the playedWords array by adding the current word.
  *
@@ -194,7 +212,11 @@ const handleWordSuccess = (): void => {
  */
 const finishRound = (): void => {
   updateWordsInLocalStorage(playedWords.value)
+  // TODO: remove this
+  savePoorWords(poorWords.value)
   playedWords.value = []
+  // TODO: remove this
+  poorWords.value = []
   gameStatus.value = 'finished'
 }
 
@@ -254,7 +276,8 @@ const exitGame = (): void => {
         <div class="flex gap-4">
           <ButtonComponent color="red" :cb="skipCurrentWord">Skip</ButtonComponent>
           <ButtonComponent color="green" :cb="handleWordSuccess">Success!</ButtonComponent>
-          <ButtonComponent color="orange" :cb="handleWordSuccess">Success!</ButtonComponent>
+          <!-- TODO: remove this component -->
+          <ButtonComponent color="amber" :cb="handlePoorWord">Poor Word...</ButtonComponent>
         </div>
       </div>
       <!-- Results -->

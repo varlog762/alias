@@ -41,3 +41,15 @@ export const updateWordsInLocalStorage = (wordsToRemove: string[]): void => {
   const filteredWords = currentWords.filter((word) => !wordsToRemove.includes(word))
   saveWordsToLocalStorage(filteredWords)
 }
+
+export const savePoorWords = (poorWords: string[]) => {
+  try {
+    const storedWords = JSON.parse(localStorage.getItem('poor-words') || '[]')
+
+    const result = [...poorWords, ...storedWords]
+
+    localStorage.setItem('poor-words', JSON.stringify(result))
+  } catch (error) {
+    console.error('Failed to save poor words to localStorage', error)
+  }
+}
