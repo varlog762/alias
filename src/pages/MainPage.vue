@@ -13,6 +13,7 @@ import {
   // startTimer,
   // stopTimer,
 } from '@/utils'
+import { useRoundStore } from '@/stores/round'
 
 const gameStatus = ref<GameStatusType>('notStarted')
 const timer = ref<number>(0)
@@ -32,8 +33,7 @@ const capitalizedWord = computed<string | null>(() => {
 
 const wordsLanguage = ref<WordLanguagesType>('russian')
 
-const roundCount = ref<number>(0)
-
+const roundStore = useRoundStore()
 const scoreStore = useScoreStore()
 
 /**
@@ -79,7 +79,7 @@ const showRandomWord = (): void => {
  * the current word.
  */
 const startGame = (): void => {
-  roundCount.value++
+  roundStore.incrementRoundCount()
 
   initializeWords()
   scoreStore.reset()
@@ -221,76 +221,68 @@ const finishRound = (): void => {
 }
 
 const exitGame = (): void => {
-  roundCount.value = 0
+  roundStore.resetRoundCount()
   gameStatus.value = 'notStarted'
 }
 </script>
 
 <template>
-  <div class="flex flex-col min-h-screen bg-black">
-    <header>
-      <div class="container mx-auto py-5 flex items-center justify-between">
-        <h1 class="text-violet-400 text-3xl">Alias</h1>
-        <div v-if="roundCount" class="text-white text-2xl font-bold">Round: {{ roundCount }}</div>
-      </div>
-    </header>
-    <main class="flex-grow flex flex-col">
-      <!-- Start Game -->
-      <div
-        class="flex-grow flex flex-col items-center justify-center h-full"
-        v-if="gameStatus === 'notStarted'"
-      >
-        <div class="flex gap-4 mb-5">
-          <div>
-            <input
-              v-model="wordsLanguage"
-              class="mr-1"
-              type="radio"
-              id="russian-words"
-              name="words-language"
-              value="russian"
-            />
-            <label for="russian-words" class="text-white text-xl">Russian</label>
-          </div>
-          <div>
-            <input
-              v-model="wordsLanguage"
-              class="mr-1"
-              type="radio"
-              id="english-words"
-              name="words-language"
-              value="english"
-            />
-            <label for="english-words" class="text-white text-xl">English</label>
-          </div>
+  <main class="flex-grow flex flex-col">
+    <!-- Start Game -->
+    <div
+      class="flex-grow flex flex-col items-center justify-center h-full"
+      v-if="gameStatus === 'notStarted'"
+    >
+      <div class="flex gap-4 mb-5">
+        <div>
+          <input
+            v-model="wordsLanguage"
+            class="mr-1"
+            type="radio"
+            id="russian-words"
+            name="words-language"
+            value="russian"
+          />
+          <label for="russian-words" class="text-white text-xl">Russian</label>
         </div>
-        <ButtonComponent color="blue" :cb="startGame">Start Game</ButtonComponent>
-      </div>
-      <!-- Game -->
-      <div
-        class="flex-grow flex flex-col items-center justify-center h-full"
-        v-if="gameStatus === 'inProgress'"
-      >
-        <div class="text-white text-3xl mb-12">{{ timer }}</div>
-        <div class="text-white text-4xl mb-12 font-bold">{{ capitalizedWord }}</div>
-        <div class="flex gap-4">
-          <ButtonComponent color="red" :cb="skipCurrentWord">Skip</ButtonComponent>
-          <ButtonComponent color="green" :cb="handleWordSuccess">Success!</ButtonComponent>
-          <!-- TODO: remove this component -->
-          <ButtonComponent color="amber" :cb="handlePoorWord">Poor Word...</ButtonComponent>
+        <div>
+          <input
+            v-model="wordsLanguage"
+            class="mr-1"
+            type="radio"
+            id="english-words"
+            name="words-language"
+            value="english"
+          />
+          <label for="english-words" class="text-white text-xl">English</label>
         </div>
       </div>
-      <!-- Results -->
-      <div
-        class="flex-grow flex flex-col items-center justify-center h-full"
-        v-if="gameStatus === 'finished'"
-      >
-        <div class="text-white text-3xl mb-12">Total Score: {{ scoreStore.totalScore }}</div>
-        <div class="flex flex-col gap-4">
-          <ButtonComponent color="violet" :cb="startGame">Play Again</ButtonComponent>
-          <ButtonComponent color="amber" :cb="exitGame">Exit</ButtonComponent>
-        </div>
+      <ButtonComponent color="blue" :cb="startGame">Start Game</ButtonComponent>
+    </div>
+    <!-- Game -->
+    <div
+      class="flex-grow flex flex-col items-center justify-center h-full"
+      v-if="gameStatus === 'inProgress'"
+    >
+      <div class="text-white text-3xl mb-12">{{ timer }}</div>
+      <div class="text-white text-4xl mb-12 font-bold">{{ capitalizedWord }}</div>
+      <div class="flex gap-4">
+        <ButtonComponent color="red" :cb="skipCurrentWord">Skip</ButtonComponent>
+        <ButtonComponent color="green" :cb="handleWordSuccess">Success!</ButtonComponent>
+        <!-- TODO: remove this component -->
+        <ButtonComponent color="amber" :cb="handlePoorWord">Poor Word...</ButtonComponent>
       </div>
-    </main>
-  </div>
+    </div>
+    <!-- Results -->
+    <div
+      class="flex-grow flex flex-col items-center justify-center h-full"
+      v-if="gameStatus === 'finished'"
+    >
+      <div class="text-white text-3xl mb-12">Total Score: {{ scoreStore.totalScore }}</div>
+      <div class="flex flex-col gap-4">
+        <ButtonComponent color="violet" :cb="startGame">Play Again</ButtonComponent>
+        <ButtonComponent color="amber" :cb="exitGame">Exit</ButtonComponent>
+      </div>
+    </div>
+  </main>
 </template>
