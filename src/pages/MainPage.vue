@@ -4,6 +4,7 @@ import { computed, ref } from 'vue'
 import type { GameStatusType, WordLanguagesType } from '@/models'
 import wordsData from '@/assets/json/russian.json'
 import { useScoreStore } from '@/stores/score'
+import { useRoundStore } from '@/stores/round'
 import ButtonComponent from '@/components/ui/ButtonComponent.vue'
 import {
   saveWordsToLocalStorage,
@@ -13,7 +14,7 @@ import {
   // startTimer,
   // stopTimer,
 } from '@/utils'
-import { useRoundStore } from '@/stores/round'
+import { GameStatusEnum } from '@/enums'
 
 const gameStatus = ref<GameStatusType>('notStarted')
 const timer = ref<number>(0)
@@ -83,7 +84,7 @@ const startGame = (): void => {
 
   initializeWords()
   scoreStore.reset()
-  gameStatus.value = 'inProgress'
+  gameStatus.value = GameStatusEnum.IN_PROGRESS
   timer.value = 60
 
   const timerInterval = setInterval(() => {
@@ -217,12 +218,12 @@ const finishRound = (): void => {
   playedWords.value = []
   // TODO: remove this
   poorWords.value = []
-  gameStatus.value = 'finished'
+  gameStatus.value = GameStatusEnum.FINISHED
 }
 
 const exitGame = (): void => {
   roundStore.resetRoundCount()
-  gameStatus.value = 'notStarted'
+  gameStatus.value = GameStatusEnum.NOT_STARTED
 }
 </script>
 
@@ -231,7 +232,7 @@ const exitGame = (): void => {
     <!-- Start Game -->
     <div
       class="flex-grow flex flex-col items-center justify-center h-full"
-      v-if="gameStatus === 'notStarted'"
+      v-if="gameStatus === GameStatusEnum.NOT_STARTED"
     >
       <div class="flex gap-4 mb-5">
         <div>
@@ -262,7 +263,7 @@ const exitGame = (): void => {
     <!-- Game -->
     <div
       class="flex-grow flex flex-col items-center justify-center h-full"
-      v-if="gameStatus === 'inProgress'"
+      v-if="gameStatus === GameStatusEnum.IN_PROGRESS"
     >
       <div class="text-white text-3xl mb-12">{{ timer }}</div>
       <div class="text-white text-4xl mb-12 font-bold">{{ capitalizedWord }}</div>
@@ -276,7 +277,7 @@ const exitGame = (): void => {
     <!-- Results -->
     <div
       class="flex-grow flex flex-col items-center justify-center h-full"
-      v-if="gameStatus === 'finished'"
+      v-if="gameStatus === GameStatusEnum.FINISHED"
     >
       <div class="text-white text-3xl mb-12">Total Score: {{ scoreStore.totalScore }}</div>
       <div class="flex flex-col gap-4">
