@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onUnmounted, ref } from 'vue'
 
 import type { GameStatusType, WordLanguagesType } from '@/models'
 import wordsData from '@/assets/json/russian.json'
@@ -10,23 +10,20 @@ import {
   saveWordsToLocalStorage,
   getWordsFromLocalStorage,
   updateWordsInLocalStorage,
-  savePoorWords,
-  // startTimer,
-  // stopTimer,
 } from '@/utils'
 import { GameStatusEnum } from '@/enums'
 
 const gameStatus = ref<GameStatusType>('notStarted')
 const timer = ref<number>(0)
+const timerInterval = ref<ReturnType<typeof setInterval> | null>(null)
+const isPaused = ref<boolean>(false)
 const words = ref<string[]>([])
 const playedWords = ref<string[]>([])
-// TODO: remove this variable
-const poorWords = ref<string[]>([])
 
 const currentWord = ref<string | null>(null)
 const capitalizedWord = computed<string | null>(() => {
   if (!currentWord.value) {
-    return ''
+    return null
   }
 
   return currentWord.value.charAt(0).toUpperCase() + currentWord.value.slice(1)
@@ -43,7 +40,6 @@ const scoreStore = useScoreStore()
  */
 const initializeWords = (): void => {
   const storedWords = getWordsFromLocalStorage()
-  console.log(storedWords.length)
 
   if (!storedWords.length) {
     words.value = wordsData.words.map(({ russian }) => russian)
@@ -79,91 +75,71 @@ const showRandomWord = (): void => {
  * cleared. After starting the timer, a random word is selected and set as
  * the current word.
  */
+const startCountdown = (): void => {
+  if (timerInterval.value) clearInterval(timerInterval.value)
+
+  timerInterval.value = setInterval(() => {
+    timer.value--
+    if (timer.value === 0) {
+      clearInterval(timerInterval.value!)
+      timerInterval.value = null
+      finishRound()
+    }
+  }, 1000)
+}
+
 const startGame = (): void => {
   roundStore.incrementRoundCount()
 
   initializeWords()
   scoreStore.reset()
   gameStatus.value = GameStatusEnum.IN_PROGRESS
+  isPaused.value = false
   timer.value = 60
 
-  const timerInterval = setInterval(() => {
-    timer.value--
-    if (timer.value === 0) {
-      clearInterval(timerInterval)
-    }
-  }, 1000)
+  startCountdown()
 
   showRandomWord()
 }
 
 /**
- * Removes the current word from the words array.
- *
- * This is done by creating a new array from the words array that excludes
- * the current word. The new array is then set as the new words array.
- */
-const filterOutCurrentWord = (): void => {
-  words.value = words.value.filter((word) => word !== currentWord.value)
-}
-
-/**
  * Processes the current word based on the user's action.
  *
- * If the user was successful, it increments the guessedWords score in the
- * score store. If not, it increments the skippedWords score. It then filters
- * the current word out of the words array, updates the playedWords array,
- * checks if the game is over, and shows a new random word.
+ * Captures the current word upfront to avoid fragile ordering dependencies.
+ * Removes only the first occurrence of the word from the available words,
+ * updates the score, tracks the word as played, and either finishes the
+ * round or shows a new random word.
  *
  * @param {boolean} isSuccess Whether the user was successful or not.
  */
 const processWord = (isSuccess: boolean): void => {
-  filterOutCurrentWord()
+  if (gameStatus.value !== GameStatusEnum.IN_PROGRESS || isPaused.value) return
 
+  const word = currentWord.value
+  if (!word) return
+
+  // Update score
   if (isSuccess) {
     scoreStore.incrementGuessedWords()
   } else {
     scoreStore.incrementSkippedWords()
   }
 
-  updatePlayedWords()
+  // Remove only the first occurrence from available words
+  const index = words.value.indexOf(word)
+  if (index !== -1) {
+    words.value.splice(index, 1)
+  }
+
+  // Track played word and clear current
+  playedWords.value.push(word)
+  currentWord.value = null
 
   if (isGameOver()) {
     finishRound()
     return
   }
   showRandomWord()
-}
-
-// TODO: remove this method
-const handlePoorWord = () => {
-  filterOutCurrentWord()
-
-  if (currentWord.value) {
-    poorWords.value.push(currentWord.value)
-  }
-  updatePlayedWords()
-
-  if (isGameOver()) {
-    finishRound()
-    return
-  }
-  showRandomWord()
-}
-
-/**
- * Updates the playedWords array by adding the current word.
- *
- * If there is a current word set, this function pushes it onto the
- * playedWords array and then clears the current word. This helps
- * track all words that have been played during the game.
- */
-
-const updatePlayedWords = (): void => {
-  if (currentWord.value) {
-    playedWords.value.push(currentWord.value)
-    currentWord.value = null
-  }
 }
 
 /**
@@ -212,19 +188,42 @@ const handleWordSuccess = (): void => {
  * status to their initial values.
  */
 const finishRound = (): void => {
+  if (timerInterval.value) {
+    clearInterval(timerInterval.value)
+    timerInterval.value = null
+  }
   updateWordsInLocalStorage(playedWords.value)
-  // TODO: remove this
-  savePoorWords(poorWords.value)
   playedWords.value = []
-  // TODO: remove this
-  poorWords.value = []
   gameStatus.value = GameStatusEnum.FINISHED
+}
+
+/**
+ * Pauses the game by clearing the timer interval.
+ */
+const pauseGame = (): void => {
+  if (timerInterval.value) {
+    clearInterval(timerInterval.value)
+    timerInterval.value = null
+  }
+  isPaused.value = true
+}
+
+/**
+ * Resumes the game by restarting the timer interval.
+ */
+const resumeGame = (): void => {
+  isPaused.value = false
+  startCountdown()
 }
 
 const exitGame = (): void => {
   roundStore.resetRoundCount()
   gameStatus.value = GameStatusEnum.NOT_STARTED
 }
+
+onUnmounted(() => {
+  if (timerInterval.value) clearInterval(timerInterval.value)
+})
 </script>
 
 <template>
@@ -265,14 +264,18 @@ const exitGame = (): void => {
       class="flex-grow flex flex-col items-center justify-center h-full"
       v-if="gameStatus === GameStatusEnum.IN_PROGRESS"
     >
-      <div class="text-white text-3xl mb-12">{{ timer }}</div>
-      <div class="text-white text-4xl mb-12 font-bold">{{ capitalizedWord }}</div>
-      <div class="flex gap-4">
+      <div
+        class="text-white text-6xl font-bold mb-12"
+        :class="{ 'timer-pulse': timer <= 10 && timer > 0 }"
+        :key="timer"
+      >{{ timer }}</div>
+      <div v-if="!isPaused" class="text-white text-4xl mb-12 font-bold">{{ capitalizedWord }}</div>
+      <div v-if="!isPaused" class="flex gap-4 mb-6">
         <ButtonComponent color="red" :cb="skipCurrentWord">Skip</ButtonComponent>
         <ButtonComponent color="green" :cb="handleWordSuccess">Success!</ButtonComponent>
-        <!-- TODO: remove this component -->
-        <ButtonComponent color="amber" :cb="handlePoorWord">Poor Word...</ButtonComponent>
       </div>
+      <ButtonComponent v-if="isPaused" color="blue" :cb="resumeGame">Resume</ButtonComponent>
+      <ButtonComponent v-else color="amber" :cb="pauseGame">Pause</ButtonComponent>
     </div>
     <!-- Results -->
     <div
@@ -287,3 +290,15 @@ const exitGame = (): void => {
     </div>
   </main>
 </template>
+
+<style scoped>
+.timer-pulse {
+  color: #f87171;
+  animation: timer-ping 0.4s ease-out;
+}
+
+@keyframes timer-ping {
+  0% { transform: scale(1.3); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+</style>

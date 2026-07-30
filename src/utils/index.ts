@@ -1,7 +1,8 @@
 export * from './localStorageManager'
-export * from './timer'
 
-export const getColorClasses = (color: string): string => {
+import type { ButtonColorType } from '@/models'
+
+export const getColorClasses = (color: ButtonColorType): string => {
   switch (color) {
     case 'red':
       return 'border-red-600 bg-red-500 hover:bg-red-400'

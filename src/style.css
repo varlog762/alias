@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+  }
+}

@@ -38,13 +38,19 @@ export const getWordsFromLocalStorage = (): string[] => {
  */
 export const updateWordsInLocalStorage = (wordsToRemove: string[]): void => {
   const currentWords = getWordsFromLocalStorage()
-  const filteredWords = currentWords.filter((word) => !wordsToRemove.includes(word))
+  const removeSet = new Set(wordsToRemove)
+  const filteredWords = currentWords.filter((word) => !removeSet.has(word))
   saveWordsToLocalStorage(filteredWords)
 }
 
 export const savePoorWords = (poorWords: string[]) => {
   try {
     const storedWords = JSON.parse(localStorage.getItem('poor-words') || '[]')
+
+    if (!Array.isArray(storedWords)) {
+      localStorage.setItem('poor-words', JSON.stringify(poorWords))
+      return
+    }
 
     const result = [...poorWords, ...storedWords]
 
